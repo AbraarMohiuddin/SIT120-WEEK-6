@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head> 
+
+    <body>
+        <div style = "padding-bottom: 3.5%; padding-top: 3.5%; text-align: center; font-size: 40px; background-color: black; color: black;color:white">
+            Welcome To Deakin University
+        </div>
+      
+      
+      <div id="app">
+        <p>User name</p>
+        <input 
+        v-model="name"
+        type="text" 
+        placeholder="Please enter your Name" />
+        <p>Your name is: {{ name }}</p>
+        <p>Password</p>
+        <input 
+        v-model="password" 
+        type="password" 
+        placeholder="Please enter your Password" />
+        <p>Password: {{ password }}</p>
+      </div>
+      <br><br>
+      <p>Select a Unit: </p>
+      <div id="app-2">
+        <input type="checkbox" id="SIT120" value="SIT120" v-model="checkedNames">
+        <label for="SIT120">SIT120</label>
+        <input type="checkbox" id="SIT232" value="SIT232" v-model="checkedNames">
+        <label for="SIT232">SIT232</label>
+        <input type="checkbox" id="SIT103" value="SIT103" v-model="checkedNames">
+        <label for="SIT103">SIT103</label>
+        <input type="checkbox" id="SIT292" value="SIT292" v-model="checkedNames">
+        <label for="SIT292">SIT292</label>
+        <br><br>
+        <span>Units you're studying: {{ checkedNames }}</span>
+      </div>
+      <br><br>
+
+      <p>Your tutor for SIT120: </p>
+      <div id="app-3">
+        <select v-model="selected">
+          <option v-for="option in options" v-bind:value="option.value">
+            {{ option.text }}
+          </option>
+        </select>
+        <br><br>
+        <span>Selected: {{ selected }}</span>
+
+      </div>
+      
+    </body>
+
+</html>
+<script src="./script.js"></script>
